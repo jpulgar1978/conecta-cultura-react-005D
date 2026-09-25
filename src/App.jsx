@@ -3,6 +3,7 @@ import Cabecera from "./components/Cabecera";
 import Navegacion from "./components/Navegacion";
 import Cartelera from "./pages/Cartelera";
 import { actividades } from "./data/actividades";
+import MisInscripciones from "./pages/MisInscripciones";
 
 function App() {
   const [categoria, setCategoria] = useState("Todas");
@@ -52,10 +53,17 @@ useEffect(() => {
           <option>Todas</option>
           <option>Música</option>
           <option>Artes visuales</option>
+          <option>Informática</option>
+          <option>Ofimática</option>
         </select>
         <Cartelera
           actividades={visibles}
           onInscribir={inscribir}
+        />
+        <hr></hr>
+        <MisInscripciones 
+          inscripciones={inscripciones}
+          onEliminar={eliminarInscripcion}
         />
       </main>
     </>
